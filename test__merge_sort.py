@@ -1,12 +1,13 @@
 from merge_sort import merge_sort, merge
 import pytest
 
-@pytest.mark.skip(reason="no way of currently testing this")
-def test_already_sorted():
-    assert [1,2,3,4,5,6,7,8]==merge_sort([1,2,3,4,5,6,7,8])
+@pytest.mark.parametrize('expected,input', [([1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8])])
+def test_already_sorted(expected, input):
+    assert expected==merge_sort(input)
 
-def test_sort_1():
-    assert [1,2,3,4,5,6,7,8]==merge_sort([1,2,3,5,4,6,7,8])
+@pytest.mark.parametrize('expected,input', [([1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8]), ([1,2,3,4,5,6,7,8],[1,2,3,5,4,6,7,8])])
+def test_sort(expected, input):
+    assert expected==merge_sort(input)
 
 def test_sort_2():
     assert [1,2,3,4,5,6,7,8]==merge_sort([8,2,3,5,7,6,4,1])
