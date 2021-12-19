@@ -1,4 +1,5 @@
 import string
+from collections import Counter
 
 def find_duplicate(a):
     map = {}
@@ -21,13 +22,7 @@ def find_missing_letter(sentence):
 
 # find first non-duplicated char in string
 def find_first_non_duplicated_char(input):
-    map = {}
-    for e in input:
-        if map.get(e):
-            map[e] += 1
-        else:
-            map[e]=1
-
+    map = Counter(input)
     for e in input:
         if map[e] == 1:
             return e
