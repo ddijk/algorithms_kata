@@ -1,10 +1,7 @@
-def double_array(a):
+def double_array(a, index = 0):
 
-    return double_arr(a, 0)
-
-def double_arr(a, index):
     if len(a) == index:
         return a 
     else:
         a[index] *= 2
-        return double_arr(a, index+1)
+        return double_array(a, index+1)
