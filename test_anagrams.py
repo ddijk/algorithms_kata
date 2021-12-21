@@ -4,7 +4,9 @@ import pytest
 
 #@pytest.mark.skip
 @pytest.mark.parametrize('expected,input',[
-(['abc','acb','bca','bac','cab','cba'], 'abc')
+(['abc','acb','bca','bac','cab','cba'], 'abc'),
+(['abc','acb','bca','bac','cab','cba'], 'acb'),
+(['abc','acb','bca','bac','cab','cba'], 'bac')
 ])
 def test_anagram(expected, input):
     assert sorted(expected) == sorted(anagrams(input))
