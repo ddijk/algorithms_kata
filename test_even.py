@@ -7,4 +7,4 @@ from even import even_only
   ([], [])
 ])
 def test_even(input,expected):
-    assert even_only(input, []) == expected
+    assert sorted(even_only(input)) == sorted(expected)
