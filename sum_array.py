@@ -4,7 +4,7 @@ def sum(array):
 # Base case: only one element in the array: 
     if len(array) == 1:
         return array[0]
-    return array[0] + sum(array[1: len(array)- 1]) 
+    return array[0] + sum(array[1:len(array)]) 
 
 def main():
 
